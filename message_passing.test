@@ -1,0 +1,40 @@
+import.java.util.Vector;
+
+class Producer extends Thread {
+    
+// initialization of queue size
+static final int Max=7;
+private Vector messages = new Vector();
+
+@Override
+public void run()
+{
+try {
+while(true){
+    
+//producing a message to send to the consumer
+putMessage();
+
+//producer goes to sleep when the queue is full
+sleep(1000);
+}
+}
+catch (InterruptedException e){
+}
+}
+
+private synchronized void putMessage()
+throws InterruptedException
+{
+    
+// checks whether the queue is full or not
+while (message.size()=MAX)
+
+//waits for the queue to get empty
+wait();
+
+//then again adds element or messages
+messages.addElememt(new java.until.Date().toString());
+notify();
+}
+}
